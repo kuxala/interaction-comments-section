@@ -13,7 +13,6 @@ const ComponentDiv = styled.div`
   padding: 16px;
 
   @media (min-width: 868px) {
-    /* flex-direction: row; */
     min-height: 167px;
     max-width: 800px;
   }
@@ -124,10 +123,7 @@ const ThirdDivP = styled.p`
 const Delete = styled.div`
   color: red;
 `;
-// const Edit = styled.div`
-//   color: var(--Light-Grayish-Blue, #c5c6ef);
-//   font-feature-settings: "clig" off, "liga" off;
-// `;
+
 const Costums = styled.div`
   display: flex;
   gap: 10px;
@@ -136,6 +132,22 @@ const Costums = styled.div`
     display: flex;
     gap: 10px;
     padding-left: 69%;
+  }
+`;
+const EditDiv = styled.div`
+  border-radius: 8px;
+  background: var(--White, #fff);
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  margin-top: 32px;
+  font-family: "Rubik", sans-serif;
+  padding: 16px;
+  @media (min-width: 868px) {
+    /* flex-direction: row; */
+    min-height: 167px;
+    max-width: 800px;
   }
 `;
 interface Props {
@@ -150,7 +162,7 @@ function Component({ name, time, text, img }: Props) {
   const [reply, setReply] = useState<boolean>(false);
   const [send, setSend] = useState<boolean>(false);
   const [message, setMessage] = useState<string[]>([]);
-
+  const [edit, setEdit] = useState<boolean>(false);
   const handleChange = (event: any) => {
     setMessage(event.target.value);
   };
@@ -251,15 +263,6 @@ function Component({ name, time, text, img }: Props) {
               >
                 Delete
               </Delete>
-              {/* <Edit
-                onClick={() => {
-                  setReply(!reply);
-
-                  message;
-                }}
-              >
-                Edit
-              </Edit> */}
             </Costums>
           </FirstDiv>
 
@@ -303,7 +306,7 @@ function Component({ name, time, text, img }: Props) {
             </ThirdDivCounter>
             <ThirdDivP
               onClick={() => {
-                setReply(!reply);
+                setEdit(!edit);
               }}
             >
               Edit
@@ -312,6 +315,42 @@ function Component({ name, time, text, img }: Props) {
         </ComponentDiv>
       )}
 
+      {edit && (
+        <EditDiv>
+          <input
+            type="text"
+            onChange={handleChange}
+            onKeyDown={handleKeyPress}
+            value={message}
+            style={{
+              paddingBottom: "50px",
+              paddingLeft: "20px",
+              fontSize: "16px",
+              textAlign: "left",
+              borderRadius: "10px",
+              border: "1px solid gray",
+              height: "100px",
+            }}
+          />
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              paddingTop: "16px",
+            }}
+          >
+            <Button
+              onClick={() => {
+                setSend(true);
+                setEdit(false);
+              }}
+            >
+              Edit
+            </Button>
+          </div>
+        </EditDiv>
+      )}
       {reply ? (
         <ReplyDiv>
           <input

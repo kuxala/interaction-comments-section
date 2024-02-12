@@ -21,7 +21,7 @@ function App() {
         React as well soon. Perhaps you can
          give me an insight on where I can learn React? Thanks!"
       />
-      {/*
+
       <Component
         name="ramsesmiron"
         img="\assets\avatars\image-ramsesmiron.png"
@@ -30,7 +30,7 @@ function App() {
         focusing on the fundamentals of HTML, CSS, and JS before
          considering React. It’s
          very tempting to jump ahead but lay a solid foundation first."
-      /> */}
+      />
     </>
   );
 }

@@ -1,0 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  /* background: var(--Very-Light-Gray, #F5F6FA); */
+  background: var(--Very-Light-Gray, #cececf);
+}

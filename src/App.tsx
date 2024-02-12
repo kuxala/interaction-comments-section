@@ -21,7 +21,6 @@ function App() {
         React as well soon. Perhaps you can
          give me an insight on where I can learn React? Thanks!"
       />
-
       <Component
         name="ramsesmiron"
         img="\assets\avatars\image-ramsesmiron.png"

@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 const ComponentDiv = styled.div`
@@ -124,10 +124,10 @@ const ThirdDivP = styled.p`
 const Delete = styled.div`
   color: red;
 `;
-const Edit = styled.div`
-  color: var(--Light-Grayish-Blue, #c5c6ef);
-  font-feature-settings: "clig" off, "liga" off;
-`;
+// const Edit = styled.div`
+//   color: var(--Light-Grayish-Blue, #c5c6ef);
+//   font-feature-settings: "clig" off, "liga" off;
+// `;
 const Costums = styled.div`
   display: flex;
   gap: 10px;
